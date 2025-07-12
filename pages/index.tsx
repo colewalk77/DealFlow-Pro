@@ -1,15 +1,16 @@
-import Head from 'next/head';
-
 export default function Home() {
   return (
-    <div>
-      <Head>
-        <title>DealFlow Pro</title>
-      </Head>
-      <main>
-        <h1>Welcome to DealFlow Pro</h1>
-        <p>Automated lead tracking and performance insights for dealerships.</p>
-      </main>
+    <div style={{ padding: '2rem', fontFamily: 'Arial' }}>
+      <h1>🚀 DealFlow Pro Dashboard</h1>
+      <p>Welcome to the MVP! Your tools will appear here.</p>
+
+      <ul>
+        <li>✅ Lead Tracking</li>
+        <li>📊 ROI Heatmaps</li>
+        <li>🧮 Sales Pace Calculator</li>
+        <li>📦 Oldest Units in Stock</li>
+        <li>⚠️ Unsold Alert Vehicles</li>
+      </ul>
     </div>
   );
 }
