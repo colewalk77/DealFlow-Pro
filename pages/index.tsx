@@ -1,34 +1,30 @@
-// pages/index.tsx
+import { useState } from 'react';
 
-import { useEffect } from 'react';
+export default function Home() {
+  const [content, setContent] = useState({
+    title: '🚀 DealFlow Pro',
+    subtitle: 'Welcome to your MVP Homepage!',
+    instructions: 'Click any text to edit it. Your tools will go here.'
+  });
 
-export default function HomePage() {
-  useEffect(() => {
-    if (
-      typeof window !== 'undefined' &&
-      window.location.hostname === 'dealflowpros.com' &&
-      window.location.pathname === '/'
-    ) {
-      const script = document.createElement('script');
-      script.src = 'https://magic.vercel.pub/script.js';
-      script.defer = true;
-      script.dataset.projectId = 'dfp-homepage-editor';
-      document.head.appendChild(script);
+  const handleEdit = (key: string) => {
+    const updated = prompt(`Edit ${key}:`, content[key as keyof typeof content]);
+    if (updated !== null) {
+      setContent({ ...content, [key]: updated });
     }
-  }, []);
+  };
 
   return (
     <div style={{ padding: '2rem', fontFamily: 'Arial' }}>
-      <h1>🚀 DealFlow Pro</h1>
-      <p>Edit this homepage using the Magic Editor. Admin-only access is active.</p>
-      <ul>
-        <li>✅ Lead Tracking</li>
-        <li>📊 ROI Heatmaps</li>
-        <li>📈 Sales Pace Calculator</li>
-        <li>🕰️ Oldest Units in Stock</li>
-        <li>🚨 Unsold Alert Vehicles</li>
-      </ul>
+      <h1 onClick={() => handleEdit('title')} style={{ cursor: 'pointer' }}>
+        {content.title}
+      </h1>
+      <h3 onClick={() => handleEdit('subtitle')} style={{ cursor: 'pointer' }}>
+        {content.subtitle}
+      </h3>
+      <p onClick={() => handleEdit('instructions')} style={{ cursor: 'pointer' }}>
+        {content.instructions}
+      </p>
     </div>
   );
 }
-
