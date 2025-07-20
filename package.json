@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "next": "latest",
+    "next-auth": "^4.24.11",
     "react": "latest",
     "react-dom": "latest"
   },
