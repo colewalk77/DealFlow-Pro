@@ -1,8 +1,8 @@
-import Head from 'next/head';
-import { useSession } from 'next-auth/react';
+import Head from 'next/head'
+import { useSession } from 'next-auth/react'
 
 export default function Home() {
-  const { data: session } = useSession();
+  const { data: session } = useSession()
 
   return (
     <>
@@ -16,23 +16,12 @@ export default function Home() {
           <h1 className="text-4xl font-bold mb-4">DealFlow Pro</h1>
           <p className="text-lg mb-8">Intelligence That Drives Your Auto Group.</p>
 
-          {/* ✅ Conditionally render this if logged in */}
-          {session?.user?.email === 'colewalk77@gmail.com' && (
-            <div className="mt-10 border-t pt-6">
-              <p>Welcome back, Cole.</p>
-            </div>
-          )}
-
-          <div className="flex justify-center gap-6 mt-6">
-            <a href="/dealer" className="px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700">
-              Dealer Demo
-            </a>
-            <a href="/investor" className="px-6 py-3 bg-gray-800 text-white rounded-xl hover:bg-gray-900">
-              Investor Preview
-            </a>
+          <div className="flex justify-center gap-6">
+            <a href="/dealer" className="px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition">Dealer Demo</a>
+            <a href="/investor" className="px-6 py-3 bg-gray-800 text-white rounded-xl hover:bg-gray-900 transition">Investor Preview</a>
           </div>
         </div>
       </main>
     </>
-  );
+  )
 }
