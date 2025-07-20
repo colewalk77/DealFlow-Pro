@@ -5,7 +5,7 @@ export default function Home() {
   const { data: session } = useSession()
 
   return (
-    <>
+    <div>
       <Head>
         <title>DealFlow Pro</title>
         <meta name="description" content="Intelligence That Drives Your Auto Group." />
@@ -17,11 +17,11 @@ export default function Home() {
           <p className="text-lg mb-8">Intelligence That Drives Your Auto Group.</p>
 
           <div className="flex justify-center gap-6">
-            <a href="/dealer" className="px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition">Dealer Demo</a>
-            <a href="/investor" className="px-6 py-3 bg-gray-800 text-white rounded-xl hover:bg-gray-900 transition">Investor Preview</a>
+            <a href="/dealer" className="px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700">Dealer Demo</a>
+            <a href="/investor" className="px-6 py-3 bg-gray-200 text-black rounded-xl hover:bg-gray-300">Investor Preview</a>
           </div>
         </div>
       </main>
-    </>
+    </div>
   )
 }
